@@ -1,0 +1,15 @@
+body {
+  background-color: white;
+  color: black; }
+
+.content {
+  display: flex;
+  flex-direction: row;
+  background-color: green; }
+  .content nav {
+    background-color: pink;
+    width: 12rem; }
+  .content .text {
+    background-color: yellow;
+    width: 100%;
+    padding: 1rem; }
