@@ -20,6 +20,6 @@ function showPage(myPage) {
     }
   };
 
-  xmlhttp.open("GET", "/pages/"+ myPage + ".html", true);
+  xmlhttp.open("GET", "pages/"+ myPage + ".html", true);
   xmlhttp.send();
 }
