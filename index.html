@@ -6,20 +6,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="./js/operations.js"></script>
   <link rel="stylesheet" href="css/styles.css">
+  
   <title>Start Project</title>
 </head>
 <body>
-  <!-- <h1>Hola! :)</h1> -->
   <header> 
+    <nav id="navigation-mv" class="navigation-mv">
+      <input type="checkbox" id="menu-toggle" onclick="toggleVeil()"/> 
+      <label id="label-menu-toggle" for="menu-toggle"></label>  
+      <div id="menu-mv">
+        <ul>
+          <li class="menu-element" onclick="selectOptionMv()" name="git">Git</li>
+          <li class="menu-element" onclick="selectOptionMv()" name="sass">Sass</li>
+          <li class="menu-element" onclick="selectOptionMv()" name="polymer">Polymer</li>
+        </ul>
+      </div>
+
+      <div class="veil hiddenClass" onclick="closeMenu()"></div>
+
+    </nav>
     <h1> My Wiki</h1>
   </header>
   
   <div class="content"> 
-    <nav>
-      <ul>
-        <li onclick="selectOption()" name="git">Git</li>
-        <li onclick="selectOption()" name="sass">Sass</li>
-        <li onclick="selectOption()" name="polymer">Polymer</li>
+    <nav id="navigation" class="navigation">
+      <ul id="menuw">
+        <li class="menu-element" onclick="selectOption()" name="git">Git</li>
+        <li class="menu-element" onclick="selectOption()" name="sass">Sass</li>
+        <li class="menu-element" onclick="selectOption()" name="polymer">Polymer</li>
       </ul>
     </nav>
     <section class="text">
@@ -27,7 +41,8 @@
         <h2> mi texto</h2>
       </div>
     </section>
-
   </div>
+
+  
 </body>
 </html>

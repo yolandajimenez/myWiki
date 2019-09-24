@@ -6,9 +6,15 @@ function selectOption(e) {
   showPage(myPage);
 }
 
+function selectOptionMv(e) {
+  selectOption(e);
+  closeMenu();
+}
+
+
 function showPage(myPage) {
   var xmlhttp = new XMLHttpRequest();
-
+  
   xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
       if (xmlhttp.status == 200) {
@@ -19,7 +25,21 @@ function showPage(myPage) {
       }
     }
   };
-
+  
   xmlhttp.open("GET", "pages/"+ myPage + ".html", true);
   xmlhttp.send();
+}
+
+function closeMenu() {
+  document.querySelector("#menu-toggle").checked = false;
+  toggleVeil();
+}
+
+function toggleVeil() {
+  if(document.querySelector(".veil").classList.contains('hiddenClass')){
+    document.querySelector(".veil").classList.remove("hiddenClass");
+  }
+  else {
+    document.querySelector(".veil").classList.add("hiddenClass");
+  }
 }

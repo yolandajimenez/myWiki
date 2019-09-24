@@ -1,25 +1,128 @@
+ul {
+  padding-inline-start: 0px;
+  margin: 0px;
+  padding: 10px;
+}
+
+li {
+  list-style: none;
+}
+
 body {
-  background-color: white;
+  background-color: #F0F0E8;
   color: black;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  height: 5rem;
+  background-color: #F0F0E8;
+  width: 100%;
+}
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.navigation {
+  display: none;
+  width: 15rem;
+}
+
+.navigation-mv {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.6rem;
+  
+  label {  
+    cursor: pointer;
+    background-position: center center;
+    background-image: url('../img/menu.svg');
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+  }
+  input[type=checkbox] {
+    display: none; /* hide the checkbox */
+  }
+  #menu-mv {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    bottom: 0;
+    max-width: 20rem;
+    min-width: 15rem;
+    width: 60%;
+    z-index: 2;
+    overflow-y: auto;
+    background-color: white;
+    border-top: 2px solid #d3d0d0;
+    border-right: #BDBDBD 1px solid;
+    transform: translate(-100%,0);
+    transition: transform 0.25s ease-in-out;
+  }
+  input[type=checkbox]:checked + label {
+    background-image: url('../img/cerrar.svg');
+  }
+  input[type=checkbox]:checked ~ #menu-mv {
+    transform: translate(0,0);
+  }
+}
+
+.menu-element {
+  height: 32px;
+  line-height: 32px;
+  padding: 0px 10px;
+  border: 1px solid transparent;
+}
+
+.menu-element:hover {
+  background-color: #B2DFDB;
+  border: 1px solid #B2DFDB;
+  border-radius: 5px;
+  color: #00796B;
+  cursor: pointer;
+}
 
 .content {
   display: flex;
   flex-direction: row;
-  background-color: green;
+  margin: 5rem 0px 0px 0;
+  height: 100vh;
 
-  nav {
-    background-color: pink;
-    width: 12rem;
-  }
   .text {
-    background-color: yellow;
+    background-color: white;
+    border: 2px solid rgb(211, 208, 208);
     width: 100%;
     padding: 1rem;
   }
 }
 
+.hiddenClass {
+  display: none;
+}
+
+.veil {
+  position: fixed;
+  background: grey;
+  opacity: 0.5;
+  top: 5rem;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+}
 
 pre {
   background-color: #fff;
@@ -34,3 +137,16 @@ pre {
   padding: 10px 15px 13px;
 }
 
+
+
+@media (min-width: 700px) { 
+
+  .navigation-mv {
+    display: none;
+  }
+
+  .navigation {
+    display: block;
+  }
+
+}
